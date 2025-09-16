@@ -1,8 +1,13 @@
 import { allPosts } from "@/.contentlayer/generated"
 import Link from "next/link"
 import Image from "next/image" // Import Image component
+import { compareDesc } from "date-fns"
 
 export default function Home() {
+  const posts = allPosts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center text-primary-600 mb-8">
