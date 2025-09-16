@@ -1,9 +1,13 @@
 import Link from "next/link"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Mitr } from "next/font/google"
 import { Analytics } from "@/components/analytics"
 
-const inter = Inter({ subsets: ["latin"] })
+const mitr = Mitr({
+  weight: ["400", "700"],
+  subsets: ["latin", "thai"],
+  variable: "--font-mitr",
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -18,9 +22,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen bg-secondary-100 text-secondary-900 ${inter.className}`}
+        className={`antialiased min-h-screen bg-secondary-100 text-secondary-900 ${mitr.className}`}
       >
-        <div className="max-w-2xl mx-auto py-10 px-4">
+        <div className="max-w-5xl mx-auto py-10 px-4">
           <header>
             <div className="flex items-center justify-between">
               <nav className="ml-auto text-sm font-medium space-x-6">
@@ -30,6 +34,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
           </header>
           <main>{children}</main>
+          <footer className="py-6 text-center text-sm text-secondary-600">
+            <p>&copy; {new Date().getFullYear()} English For Kids. All rights reserved.</p>
+            <p>
+              <Link href="https://github.com/yutaro21jp/english-for-kids" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-700">
+                View on GitHub
+              </Link>
+            </p>
+          </footer>
         </div>
         <Analytics />
       </body>
