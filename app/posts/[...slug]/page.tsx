@@ -30,6 +30,12 @@ export async function generateMetadata({
     return {}
   }
 
+  const ogImage = post.image
+    ? post.image
+    : post.youtubeId
+    ? `https://img.youtube.com/vi/${post.youtubeId}/mqdefault.jpg`
+    : undefined
+
   return {
     title: post.title,
     description: post.description,
