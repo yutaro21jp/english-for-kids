@@ -1,5 +1,6 @@
 import { allPosts } from "@/.contentlayer/generated"
 import Link from "next/link"
+import Image from "next/image" // Import Image component
 
 export default function Home() {
   return (
@@ -15,12 +16,22 @@ export default function Home() {
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
           >
             <Link href={post.slug} className="block">
-              {/* Placeholder for video thumbnail */}
-              <div className="w-full h-48 bg-secondary-200 flex items-center justify-center text-secondary-600 text-lg font-semibold">
-                Video Thumbnail
-              </div>
+              {post.youtubeId ? (
+                <div className="relative w-full h-48">
+                  <Image
+                    src={`https://img.youtube.com/vi/${post.youtubeId}/mqdefault.jpg`}
+                    alt={`Thumbnail for ${post.title}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-48 bg-secondary-200 flex items-center justify-center text-secondary-600 text-lg font-semibold">
+                  No Video Thumbnail
+                </div>
+              )}
               <div className="p-4">
-                <h2 className="text-xl font-semibold text-primary-700 mb-2">
+                <h2 className="text-xl font-semibold text-primary-600 mb-2">
                   {post.title}
                 </h2>
                 {post.description && (
