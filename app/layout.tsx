@@ -2,6 +2,9 @@ import Link from "next/link"
 import "./globals.css"
 import { Mitr } from "next/font/google"
 import { Analytics } from "@/components/analytics"
+import { allPosts } from "@/.contentlayer/generated"
+import { Header } from "@/components/header"
+import { CategoryMenu } from "@/components/category-menu"
 
 const mitr = Mitr({
   weight: ["400", "700"],
@@ -19,28 +22,23 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const categories = Array.from(new Set(allPosts.map((post) => post.category)))
+
   return (
     <html lang="en">
       <body
         className={`antialiased min-h-screen bg-secondary-100 text-secondary-900 ${mitr.className}`}
       >
         <div className="max-w-5xl mx-auto py-10 px-4">
-          <header>
-            <div className="flex items-center justify-between">
-              <nav className="ml-auto text-sm font-medium space-x-6">
-                <Link href="/" className="text-primary-500 hover:text-primary-700">Home</Link>
-                <Link href="/about" className="text-primary-500 hover:text-primary-700">About</Link>
-              </nav>
-            </div>
-          </header>
+          <Header categories={categories} />
           <main>{children}</main>
           <footer className="py-6 text-center text-sm text-secondary-600">
+            <nav className="mb-4 flex justify-center items-center text-sm font-medium space-x-2">
+              <Link href="/" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">Home</Link>
+              <CategoryMenu categories={categories} />
+              <Link href="/about" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">About</Link>
+            </nav>
             <p>&copy; {new Date().getFullYear()} English For Kids. All rights reserved.</p>
-            <p>
-              <Link href="https://github.com/yutaro21jp/english-for-kids" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-700">
-                View on GitHub
-              </Link>
-            </p>
           </footer>
         </div>
         <Analytics />

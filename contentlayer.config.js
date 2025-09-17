@@ -44,6 +44,10 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    category: {
+      type: "string",
+      required: true,
+    },
     youtubeId: {
       type: "string",
       required: false,

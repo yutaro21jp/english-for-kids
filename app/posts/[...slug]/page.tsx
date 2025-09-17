@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { allPosts } from "contentlayer/generated"
 
 import { Metadata } from "next"
+import Link from "next/link"
 import { Mdx } from "@/components/mdx-components"
 
 interface PostProps {
@@ -70,6 +71,17 @@ export default async function PostPage({ params }: PostProps) {
       )}
       <hr className="my-4" />
       <Mdx code={post.body.code} />
+      <hr className="my-8" />
+      {post.category && (
+        <div className="text-lg">
+          <span>Category: </span>
+          <Link href={`/categories/${post.category.toLowerCase()}`}>
+            <span className="inline-block bg-primary-100 text-primary-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full dark:bg-primary-200 dark:text-primary-900 hover:bg-primary-200 dark:hover:bg-primary-300 transition-colors">
+              {post.category}
+            </span>
+          </Link>
+        </div>
+      )}
     </article>
   )
 }
