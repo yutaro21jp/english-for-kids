@@ -20,7 +20,10 @@ export default function CategoryPage({ params }: { params: { category: string } 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center text-primary-600 mb-8">
-        Category: {category}
+        <span>Category: </span>
+        <span className="inline-block bg-primary-100 text-primary-800 px-4 py-1 rounded-full dark:bg-primary-200 dark:text-primary-900">
+          {category}
+        </span>
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
