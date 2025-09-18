@@ -27,7 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen bg-secondary-100 text-secondary-900 ${mitr.className}`}
+        className={`antialiased min-h-screen bg-white text-secondary-900 ${mitr.className}`}
       >
         <div className="max-w-5xl mx-auto py-10 px-4">
           <Header categories={categories} />
