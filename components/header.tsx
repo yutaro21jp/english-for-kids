@@ -3,12 +3,14 @@
 import { useState } from "react"
 import Link from "next/link"
 import { CategoryMenu } from "@/components/category-menu"
+import { TagMenu } from "@/components/tag-menu"
 
 interface HeaderProps {
   categories: string[]
+  tags: string[]
 }
 
-export function Header({ categories }: HeaderProps) {
+export function Header({ categories, tags }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
@@ -23,6 +25,7 @@ export function Header({ categories }: HeaderProps) {
         <nav className="hidden md:flex items-center text-sm font-medium space-x-2">
           <Link href="/" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">Home</Link>
           <CategoryMenu categories={categories} />
+          <TagMenu tags={tags} />
           <Link href="/about" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">About</Link>
         </nav>
 
@@ -52,6 +55,18 @@ export function Header({ categories }: HeaderProps) {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {category}
+              </Link>
+            ))}
+            <hr/>
+            <h3 className="font-semibold">Tags</h3>
+            {tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/tags/${tag.toLowerCase()}`}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {tag}
               </Link>
             ))}
           </nav>

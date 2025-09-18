@@ -5,6 +5,7 @@ import { Analytics } from "@/components/analytics"
 import { allPosts } from "@/.contentlayer/generated"
 import { Header } from "@/components/header"
 import { CategoryMenu } from "@/components/category-menu"
+import { TagMenu } from "@/components/tag-menu"
 
 const mitr = Mitr({
   weight: ["400", "700"],
@@ -23,6 +24,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   const categories = Array.from(new Set(allPosts.map((post) => post.category)))
+  const tags = Array.from(new Set(allPosts.flatMap((post) => post.tags || [])))
 
   return (
     <html lang="en">
@@ -30,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`antialiased min-h-screen bg-white text-secondary-900 ${mitr.className}`}
       >
         <div className="max-w-5xl mx-auto py-10 px-4">
-          <Header categories={categories} />
+          <Header categories={categories} tags={tags} />
           <main>{children}</main>
           <footer className="py-6 text-center text-sm text-secondary-600">
             <nav className="mb-4 flex justify-center items-center text-sm font-medium space-x-2">
