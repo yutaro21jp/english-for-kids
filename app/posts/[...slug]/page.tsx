@@ -87,7 +87,7 @@ export default async function PostPage({ params }: PostProps) {
           <span>Tags: </span>
           {post.tags.map((tag) => (
             <Link key={tag} href={`/tags/${tag.toLowerCase()}`}>
-              <span className="inline-block bg-secondary-100 text-secondary-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full dark:bg-secondary-200 dark:text-secondary-900 hover:bg-secondary-200 dark:hover:bg-secondary-300 transition-colors">
+              <span className="inline-block bg-rose-100 text-rose-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full dark:bg-rose-200 dark:text-rose-900 hover:bg-rose-200 dark:hover:bg-rose-300 transition-colors">
                 {tag}
               </span>
             </Link>

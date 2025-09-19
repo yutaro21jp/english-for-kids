@@ -21,7 +21,7 @@ export default function TagPage({ params }: { params: { tag: string } }) {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center text-primary-600 mb-8">
         <span>Tag: </span>
-        <span className="inline-block bg-secondary-100 text-secondary-800 px-4 py-1 rounded-full dark:bg-secondary-200 dark:text-secondary-900">
+        <span className="inline-block bg-rose-100 text-rose-800 px-4 py-1 rounded-full dark:bg-rose-200 dark:text-rose-900">
           {tag}
         </span>
       </h1>
