@@ -1,3 +1,3 @@
-# English For Kids
+# English For Kids：ONE
 
 This is an English learning website created especially for my dear daughter, who is learning English. I hope you enjoy learning and watching your favorite YouTube videos here!

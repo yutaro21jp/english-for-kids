@@ -18,7 +18,7 @@ export function Header({ categories, tags }: HeaderProps) {
       <div className="flex items-center justify-between">
         {/* Site Title/Logo on the left */}
         <Link href="/" className="text-2xl font-bold text-primary-600">
-          English For Kids
+          English For Kids：ONE
         </Link>
 
         {/* Desktop Menu */}

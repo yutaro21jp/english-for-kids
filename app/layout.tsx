@@ -14,7 +14,7 @@ const mitr = Mitr({
 })
 
 export const metadata = {
-  title: "English For Kids",
+  title: "English For Kids：ONE",
   description: "This is an English learning website created especially for my dear daughter, who is learning English. I hope you enjoy learning and watching your favorite YouTube videos here!",
 }
 
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <CategoryMenu categories={categories} />
               <Link href="/about" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">About</Link>
             </nav>
-            <p>&copy; {new Date().getFullYear()} English For Kids. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} English For Kids：ONE. All rights reserved.</p>
           </footer>
         </div>
         <Analytics />
