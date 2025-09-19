@@ -38,6 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <nav className="mb-4 flex justify-center items-center text-sm font-medium space-x-2">
               <Link href="/" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">Home</Link>
               <CategoryMenu categories={categories} />
+              <TagMenu tags={tags} />
               <Link href="/about" className="px-3 py-2 rounded-full transition-colors text-primary-500 hover:bg-primary-200 hover:text-primary-700">About</Link>
             </nav>
             <p>&copy; {new Date().getFullYear()} English For Kids：ONE. All rights reserved.</p>
