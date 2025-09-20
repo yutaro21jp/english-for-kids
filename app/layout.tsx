@@ -28,13 +28,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <head>
-        <meta property="og:title" content="English For Kids：ONE" />
-        <meta property="og:description" content="This is an English learning website created especially for my dear daughter, who is learning English. I hope you enjoy learning and watching your favorite YouTube videos here!" />
-        <meta property="og:url" content="https://english-for-kids-one.vercel.app" />
-        <meta property="og:site_name" content="English For Kids：ONE" />
-        <meta property="og:type" content="website" />
-      </head>
       <body
         className={`antialiased min-h-screen bg-white text-secondary-900 ${mitr.className}`}
       >

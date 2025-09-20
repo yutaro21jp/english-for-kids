@@ -2,6 +2,15 @@ import { allPosts } from "@/.contentlayer/generated"
 import Link from "next/link"
 import Image from "next/image" // Import Image component
 import { compareDesc } from "date-fns"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "English for Kids One",
+  description: "An English learning website created especially for my dear daughter, who is learning English. I hope you enjoy learning and watching your favorite YouTube videos here!",
+  openGraph: {
+    images: ["/english-for-kids-one.png"],
+  },
+}
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
