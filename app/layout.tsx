@@ -14,6 +14,7 @@ const mitr = Mitr({
 })
 
 export const metadata = {
+  metadataBase: new URL("https://english-for-kids-one.vercel.app"),
   title: "English For Kids：ONE",
   description: "This is an English learning website created especially for my dear daughter, who is learning English. I hope you enjoy learning and watching your favorite YouTube videos here!",
 }
