@@ -6,6 +6,7 @@ import { allPosts } from "@/.contentlayer/generated"
 import { Header } from "@/components/header"
 import { CategoryMenu } from "@/components/category-menu"
 import { TagMenu } from "@/components/tag-menu"
+import { Metadata } from "next"
 
 const mitr = Mitr({
   weight: ["400", "700"],
